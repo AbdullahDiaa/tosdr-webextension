@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "Terms of Service; Didn't Read",
+	"version": "1.0.0",
+	"description": "Get information instantly about websites' terms of service and privacy policies, with ratings and summaries from the www.tosdr.org.",
+	"applications": {
+		"gecko": {
+			"id": "jid0-3GUEt1r69sQNSrca5p8kx9Ezc3U@jetpack",
+			"strict_min_version": "40.0.0",
+			"strict_max_version": "50.*"
+		}
+	},
+	"permissions" : [
+		"tabs",
+		"notifications",
+		"http://tosdr.org/*"
+	],
+	"background": { 
+		"scripts": ["libs/jquery-2.1.4.js", "background.js"],
+		"persistent": false
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "images/icon-19.png"
+		},
+		"default_title" : "Terms of Service; Didn’t Read"
+	}
+}
