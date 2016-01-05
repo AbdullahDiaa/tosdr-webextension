@@ -4,19 +4,11 @@
 
 var services = [];
 
-function createRegExpForServiceUrl(serviceUrl) {
-	if (/^http/.exec(serviceUrl)) {
-		return new RegExp(serviceUrl + '.*');
-	} else {
-		return new RegExp('https?://[^:/]*\\b' + serviceUrl + '.*');
-	}
-}
-
 function storeService(serviceName, serviceIndexData) {
 	$.ajax('https://tosdr.org/services/' + serviceName + '.json')
 	.done(function(service) {
 		if (!service.url) {
-			log(serviceName+' has no service url');
+			console.warn(serviceName+' has no service url.');
 			return;
 		}
 		service.urlRegExp = createRegExpForServiceUrl(service.url);
@@ -27,10 +19,10 @@ function storeService(serviceName, serviceIndexData) {
 		}
 		services.push(service);
 		localStorage.setItem(serviceName, JSON.stringify(service));
-		log(localStorage);
+		console.info(localStorage.getItem(serviceName));
 	})
 	.fail(function() {
-		log( "Couldn't load service:" + serviceName );
+		console.error( "Couldn't load service:" + serviceName );
 	});
 }
 
@@ -41,7 +33,7 @@ $.ajax('https://tosdr.org/index/services.json')
 	}
 })
 .fail(function() {
-	log( "error" );
+	console.error( "error" );
 });
 
 function onUrlChanged(tabId, changeInfo, tab) {
