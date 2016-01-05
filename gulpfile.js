@@ -2,15 +2,13 @@
 
 var gulp = require('gulp'),
 	zip = require('gulp-zip'),
-	watch = require('gulp-watch');
+	childProc = require('child_process');
 
-
-gulp.task('xpi', function () {
-	return gulp.src('app/**')
+gulp.task('default', function () {
+	
+	gulp.src('app/**')
 	.pipe(zip('jid0-3GUEt1r69sQNSrca5p8kx9Ezc3U@jetpack.xpi'))
 	.pipe(gulp.dest('dist'));
-});
 	
-gulp.task('default', function () {
-	gulp.watch('app/*', ['xpi']);
+	childProc.exec('open -a "FirefoxNightly" dist/jid0-3GUEt1r69sQNSrca5p8kx9Ezc3U@jetpack.xpi');
 });
