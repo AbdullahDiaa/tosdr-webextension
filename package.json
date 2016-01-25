@@ -1,5 +1,5 @@
 {
-  "name": "tosdr-webextension",
+  "name": "tosdr-webextension-installer",
   "version": "1.0.0",
   "description": "Get information instantly about websites' terms of service and privacy policies, with ratings and summaries from the www.tosdr.org.",
   "license": "AGPL-3.0",
@@ -7,7 +7,8 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-watch": "^4.3.5",
-    "gulp-zip": "^3.0.2"
+    "gulp-zip": "^3.0.2",
+    "yargs": "^3.32.0"
   },
   "repository": {
     "type": "git",
