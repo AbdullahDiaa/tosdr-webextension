@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
-	"name": "Terms of Service; Didn't Read",
+	"name": "__MSG_extensionName__",
 	"version": "1.0.0",
-	"description": "Get information instantly about websites' terms of service and privacy policies, with ratings and summaries from the www.tosdr.org.",
+	"description": "__MSG_extensionDescription__",
 	"applications": {
 		"gecko": {
 			"id": "jid0-3GUEt1r69sQNSrca5p8kx9Ezc3U@jetpack",
@@ -23,5 +23,6 @@
 		"default_icon": "images/icon-19.png",
 		"default_title" : "Terms of Service; Didn’t Read",
 		"default_popup": "popup/popup.html"
-	}
+	},
+	 "default_locale": "en"
 }
