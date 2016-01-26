@@ -16,6 +16,7 @@
 				<div id="target">Loading...</div>
 				<script id="template" type="text/x-jsrender">
 					
+					
 					<div class="modal-header">
 						<h3>
 							<a href="https://tosdr.org/#{{:id}}" target="_blank">
@@ -43,9 +44,19 @@
 				    <section class="specificissues">
 				        <ul class="tosdr-points">
 						{{props points}}
-							<li class="point">
+						<li class="point">
+							<div class="{{:prop.point}}">
+								<h5>
+									<span class="badge {{:prop.badge}}" title="{{:prop.point}}">
+										<i class="glyphicon glyphicon-{{:prop.icon}}"></i>
+									</span>
+									{{:prop.title}}
+									<a href="{{:prop.discussion}}" target="_blank" class="label context">Discussion</a>
+								</h5>
 
-							</li>
+								<p>{{:prop.tosdr.tldr}}</p>
+							</div>
+						</li>
 						{{/props}}
 				        </ul>
 				    </section>

@@ -1,11 +1,6 @@
-body{
-	width:500px;
-	height:500px;
-}
-
 section {
-    margin-bottom: 2em;
-    padding-top: 2em;
+    margin-bottom: 1em;
+    padding-top: 1em;
 }
 
 /* ========== */
@@ -21,7 +16,7 @@ section {
 /* = Body = */
 /* ======== */
 .modal-body {
-    padding: 15px 5px;
+    padding: 5px 5px;
 }
 
 .tosdr-rating label {
@@ -87,17 +82,11 @@ section {
 }
 
 .badge {
-    padding: 1px 2px;
+    padding: 2px 2px;
 }
 
 .label {
     padding: 2px 4px;
-}
-
-.badge i {
-    color: transparent;
-    font-size: .001em;
-    vertical-align: text-bottom;
 }
 
 /* ================ */
@@ -131,6 +120,7 @@ ul.tosdr-points li {
 li.point span.badge {
     padding: 1px 9px;
     color: #fff;
+	font-size:1.15em;
 }
 
 .point .label.context {
