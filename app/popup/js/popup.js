@@ -37,7 +37,6 @@ $(document).ready(function(){
 	  "E":"The terms of service raise very serious concerns."
 	};
 	
-	
 	if(service){
 		var class_code = (service.tosdr.rated)? service.tosdr.rated : false;
 		var renderService = {
@@ -47,8 +46,10 @@ $(document).ready(function(){
 			'ratingText' : RATING_TEXT[class_code],
 			'links'	: service.links
 		}
+		$('.loading').show();
 		
 		$.ajax('https://tosdr.org/api/1/service/' + serviceName + '.json').done(function(service){
+			$('.loading').hide();
 			var points = [];
 			for (var point in service.pointsData) {
 				service.pointsData[point] = tosdrPoint(service.pointsData[point]);
