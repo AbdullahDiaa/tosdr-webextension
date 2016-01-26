@@ -6,14 +6,65 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 	<script src="../libs/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
-	<script src="popup.js" type="text/javascript" charset="utf-8"></script>
-	
+	<script src="js/jsrender.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/popup.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12" id="page">
-      			Loading..
+			<div class="col-md-12">
+				<div id="target">Loading...</div>
+				<script id="template" type="text/x-jsrender">
+					
+					<div class="modal-header">
+						<h3>
+							<a href="https://tosdr.org/#{{:id}}" target="_blank">
+								<img src="../images/tosdr-logo-32.png" alt="" class="pull-left"/>
+							</a>
+						</h3>
+					</div>
+					
+					<!-- Service Rating -->
+					<div class="modal-body">
+						<div class="tosdr-rating">
+							{{if classCode}}
+							<label class="label {{:classCode}}">
+								{{:class}}
+							</label>
+							{{else}}
+							<h4>{{:class}}</h4>
+							{{/if}}
+							<p>{{:ratingText}}</p>
+						</div>
+					</div>
+					
+					{{if points}}
+					<!-- Detailed points -->
+				    <section class="specificissues">
+				        <ul class="tosdr-points">
+						{{props points}}
+							<li class="point">
+
+							</li>
+						{{/props}}
+				        </ul>
+				    </section>
+					{{/if}}
+					
+					<!-- Privacy page links -->
+				    {{if links}}
+				        <section>
+				            <h4>Read the Terms</h4>
+				            <ul class="tosback2">
+				                {{props links}}
+				                    <li><a target="_blank" href="{{:prop.url}}">{{:prop.name}}</a></li>
+				                {{/props}}
+				            </ul>
+				        </section>
+				    {{/if}}
+
+					<a target="_blank" href="https://tosdr.org/get-involved.html">Get Involved!</a>
+				</script>
 			</div>
 		</div>
 	</div>
